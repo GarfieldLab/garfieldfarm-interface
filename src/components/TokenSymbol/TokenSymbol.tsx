@@ -1,6 +1,6 @@
 import React from 'react';
 
-import gftLogo from '../../assets/img/GFT.svg';
+import gftLogo from '../../assets/img/cat.png';
 import USDTLogo from '../../assets/img/USDT.png';
 import HUSDLogo from '../../assets/img/HUSD.png';
 import BTCLogo from '../../assets/img/BTC.png';

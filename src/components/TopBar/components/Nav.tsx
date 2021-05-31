@@ -5,10 +5,12 @@ import { NavLink } from 'react-router-dom'
 const Nav: React.FC = () => {
   return (
     <StyledNav>
-      <StyledLink exact activeClassName="active" to="/">首页</StyledLink>
+      
+      <StyledLink2 href="http://swap.garfield.finance/#/">兑换</StyledLink2>
+      <StyledLink2 href="http://swap.garfield.finance/#/pool">资金池</StyledLink2>
       <StyledLink exact activeClassName="active" to="/farm">挖矿</StyledLink>
       <StyledLink exact activeClassName="active" to="/vault">机枪池</StyledLink>
-      <StyledLink2 href="https://heco.vote/#/gocash.heco" target="_blank">治理</StyledLink2>
+      <StyledLink2 href="https://garfieldfinance.gitbook.io/garfieldfinance/" target="_blank">产品说明</StyledLink2>
     </StyledNav>
   )
 }
