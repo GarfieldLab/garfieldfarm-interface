@@ -66,9 +66,11 @@ const Stake: React.FC<StakeProps> = ({ farm }) => {
             <CardIcon>
               <TokenSymbol symbol={farm.TokenA} size={54} />
             </CardIcon>
+            {farm.TokenB?
             <CardIcon>
               <TokenSymbol symbol={farm.TokenB} size={54} />
             </CardIcon>
+            :''}
             </LogoCard>
             <Value value={getDisplayBalance(stakedBalance, farm.depositToken.decimal)} />
             <Label text={`质押的${farm.depositTokenName}`} />
