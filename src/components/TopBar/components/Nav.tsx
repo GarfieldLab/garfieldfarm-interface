@@ -11,6 +11,8 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/farm">挖矿</StyledLink>
       <StyledLink exact activeClassName="active" to="/vault">机枪池</StyledLink>
       <StyledLink2 href="https://garfieldfinance.gitbook.io/garfieldfinance/" target="_blank">产品说明</StyledLink2>
+      <StyledLink2 href="https://github.com/GarfieldLab/garfieldfinance-Valut/blob/main/REP-GarfieldFinance-2021-05-29.pdf" target="_blank">Certik审计报告</StyledLink2>
+      <StyledLink2 href="https://github.com/GarfieldLab/garfieldswap-core/blob/main/Garfield%20Finance%20Swap_audit.pdf" target="_blank">Armors Labs审计报告</StyledLink2>
     </StyledNav>
   )
 }
@@ -19,6 +21,7 @@ const StyledNav = styled.nav`
 @media (max-width:768px){
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   @media (max-width: 835px) {
     font-size: 23px;
     margin-top:10px;
