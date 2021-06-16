@@ -2,7 +2,7 @@ import { Fetcher, Route, Token } from 'garfieldswap-sdk';
 import { Configuration } from './config';
 import { StartTime, TokenStat, UserInfo, TotalPot, Allocations } from './types';
 import { BigNumber, Contract, ethers, Overrides, PayableOverrides } from 'ethers';
-import { TransactionResponse } from '@ethersproject/providers';
+import { BaseProvider, TransactionResponse } from '@ethersproject/providers';
 import ERC20 from './ERC20';
 import { getDefaultProvider } from '../utils/provider';
 import IUniswapV2PairABI from './IUniswapV2Pair.abi.json';
@@ -126,7 +126,7 @@ export class GoFarm {
 
     console.log(token)
     try {
-      const usdtToToken = await Fetcher.fetchPairData(usdt, token, this.provider);
+      const usdtToToken = await Fetcher.fetchPairData(usdt, token, this.provider as unknown as BaseProvider);
       const priceInUSDT = new Route([usdtToToken], token);
       return priceInUSDT.midPrice.toSignificant(3);
     } catch (err) {
@@ -310,7 +310,7 @@ export class GoFarm {
     const { vaults } = this.config;
     const _vaults = [];
     console.log(123, Object.entries(vaults));
-    
+
     for (const [, address] of Object.entries(vaults)) {
       if (address !== this.externalTokens['sGFT'].address) {
         _vaults.push(address);
@@ -318,7 +318,7 @@ export class GoFarm {
     }
     return await getVaultApy.getApysOfWeek(_vaults);
   }
-  
+
   async getVaultTVLs(): Promise<string> {
     const getVaultApy = this.contracts['GetVaultApy'];
     const { vaults } = this.config;
