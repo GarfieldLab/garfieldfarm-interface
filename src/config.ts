@@ -189,5 +189,5 @@ export const vaultDefinitions: { [contractName: string]: VaultInfo } = {
   },
 };
 // export default configurations[process.env.NODE_ENV || "development"];
-// export default configurations['production'];
-export default configurations["development"];
+export default configurations['production'];
+// export default configurations["development"];
