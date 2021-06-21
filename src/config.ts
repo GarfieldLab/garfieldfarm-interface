@@ -40,7 +40,7 @@ const configurations: { [env: string]: Configuration } = {
     chainId: ChainId.HECO,
     etherscanUrl: 'https://hecoinfo.com',
     defaultProvider: 'https://http-mainnet.huobichain.com',
-    MasterChef: '0x439B911d6423255A515d9762e966985D206CC177',
+    MasterChef: '0x0bF517Ccfb8dDA85CB278595C6799b8652B85B13',
     GetApy: '0xE453Fd8FF38b46fBda57f236103f6336CBf50594',
     GetVaultApy: '0xaE3a4402B987Ad29D5e7F17Bbb4fD22a713f7DaE',
     deployments: require('./go-farm/deployments/deployments.mainnet.json'),
