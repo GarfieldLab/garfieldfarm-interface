@@ -29,7 +29,6 @@ export function shouldCheck(
 
 export default function Updater(): null {
   const { chainId, ethereum } = useWallet();
-
   const lastBlockNumber = useBlockNumber();
 
   const dispatch = useDispatch<AppDispatch>();
@@ -44,6 +43,7 @@ export default function Updater(): null {
     if (!chainId || !ethereum || !lastBlockNumber) {
       return;
     }
+    console.log('updater');
 
     const provider = getDefaultProvider();
     Object.keys(transactions)

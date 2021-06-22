@@ -17,21 +17,21 @@ const configurations: { [env: string]: Configuration } = {
       HUSD: ['0x8Dd66eefEF4B503EB556b1f50880Cc04416B916B', 8],
       HT: ['0x7af326b6351c8a9b8fb8cd205cbe11d4ac5fa836', 18],
       DOT: ['0xAbE5acA6C8996482b6a7CD3f63A02FaBCc20BAE7', 18],
-      ETH: ['0xfeB76Ae65c11B363Bd452afb4A7eC59925848656',18],
+      ETH: ['0xfeB76Ae65c11B363Bd452afb4A7eC59925848656', 18],
       'GFT_HT-LP': ['0x19e549337034dcE4B070E68A69369a634B438215', 18],
       'GFT_USDT-LP': ['0xb6f2F3Af7c6F2c58E4fDBFedDE323339cD669B7D', 18],
       gUSDT: ['0xFDc291B37d6d6C6b7a1d956Dc7E6eb9f14eC07c2', 6],
       gHUSD: ['0xd3361CaD48bABdC88Db9715bac492bd6A7117ad5', 8],
       gHT: ['0x07544cd4902142e62c740E4af98C17Db434109E4', 18],
       gDOT: ['0xEFf90Ee417Ce874710C979CfaE8f82AB2868b49c', 18],
-      gETH:['0xe3Ad4c6879b62f5d73CC720Ae0Eb8A947303d7ad',18]
+      gETH: ['0xe3Ad4c6879b62f5d73CC720Ae0Eb8A947303d7ad', 18]
     },
     vaults: {
       USDT: '0xFDc291B37d6d6C6b7a1d956Dc7E6eb9f14eC07c2',
       HUSD: '0xd3361CaD48bABdC88Db9715bac492bd6A7117ad5',
       HT: '0x07544cd4902142e62c740E4af98C17Db434109E4',
       DOT: '0xEFf90Ee417Ce874710C979CfaE8f82AB2868b49c',
-      ETH:'0xe3Ad4c6879b62f5d73CC720Ae0Eb8A947303d7ad'
+      ETH: '0xe3Ad4c6879b62f5d73CC720Ae0Eb8A947303d7ad'
     },
     refreshInterval: 10000,
     gasLimitMultiplier: 1.1,
@@ -39,8 +39,8 @@ const configurations: { [env: string]: Configuration } = {
   production: {
     chainId: ChainId.HECO,
     etherscanUrl: 'https://hecoinfo.com',
-    defaultProvider: 'https://http-mainnet.huobichain.com',
-    MasterChef: '0x0bF517Ccfb8dDA85CB278595C6799b8652B85B13',
+    defaultProvider: 'https://http-mainnet.hecochain.com',
+    MasterChef: '0x439B911d6423255A515d9762e966985D206CC177',
     GetApy: '0xE453Fd8FF38b46fBda57f236103f6336CBf50594',
     GetVaultApy: '0xaE3a4402B987Ad29D5e7F17Bbb4fD22a713f7DaE',
     deployments: require('./go-farm/deployments/deployments.mainnet.json'),
