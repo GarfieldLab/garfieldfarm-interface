@@ -23,7 +23,7 @@ const App: React.FC = () => {
     <Providers>
       <Router basename="/">
         <Switch>
-          <Route path="/" exact>
+        <Route path="/" exact>
             <Farms />
           </Route>
           <Route path="/farm">
@@ -48,10 +48,10 @@ const Providers: React.FC = ({ children }) => {
             <ModalsProvider>
               <FarmsProvider>
                 <VaultsProvider>
-                  <>
-                    <Popups />
-                    {children}
-                  </>
+                    <>
+                      <Popups />
+                      {children}
+                    </>
                 </VaultsProvider>
               </FarmsProvider>
             </ModalsProvider>

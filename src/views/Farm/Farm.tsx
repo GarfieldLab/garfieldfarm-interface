@@ -64,27 +64,10 @@ const LPTokenHelpText: React.FC<{ farm: FarmEntity }> = ({ farm }) => {
       }
       target="_blank"
     >
-      <StyledIcon>
-        {
-          <img
-            src={require('../../assets/img/HT.png')}
-            width="80%"
-            height="80%"
-            style={{ position: 'relative', top: '-5px' }}
-          />
-        }
-      </StyledIcon>
-      {`  在Garfield为 ${farm.TokenA}/${farm.TokenB} 交易对提供流动性  `}
-      <StyledIcon>
-        {
-          <img
-            src={require('../../assets/img/HT.png')}
-            width="80%"
-            height="80%"
-            style={{ position: 'relative', top: '-5px' }}
-          />
-        }
-      </StyledIcon>
+      <StyledIcon>{<img src={require("../../assets/img/HT.png")} width="80%" height="80%"  style={{position:"relative",top:"-5px"}}/>}</StyledIcon>
+       <div style={{width:'40%',margin:'0 auto'}}>{`  在Garfield为 ${farm.TokenA}/${farm.TokenB} 交易对提供流动性  `}{`为了挖矿的整体平稳，收益将会采取阶段锁仓制，72小时内提取收益将会锁定75%，5日内提取收益锁定50%，7日内提取收益锁定15%。挖矿超过七天，收益可以全部提取。锁定的部分需要再次质押挖矿才可解锁，并且再次质押的金额需要超过锁定时挖矿的金额的最大值。`}
+      </div>
+      <StyledIcon>{<img src={require("../../assets/img/HT.png")} width="80%" height="80%"  style={{position:"relative",top:"-5px"}}/>}</StyledIcon>
     </StyledLink>
   );
 };

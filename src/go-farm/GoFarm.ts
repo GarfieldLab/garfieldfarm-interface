@@ -137,7 +137,7 @@ export class GoFarm {
   async earnedFromFarm(pid: number, account = this.myAccount): Promise<BigNumber> {
     const pool = this.contracts['MasterChef'];
     try {
-      return await pool.pendingGFT(pid, account);
+      return await pool.pendingToken(pid, account);
     } catch (err) {
       console.error(`Failed to call earned() on pool ${pool.address}: ${err.stack}`);
       return BigNumber.from(0);
