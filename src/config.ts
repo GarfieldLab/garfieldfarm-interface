@@ -39,7 +39,7 @@ const configurations: { [env: string]: Configuration } = {
   production: {
     chainId: ChainId.HECO,
     etherscanUrl: 'https://hecoinfo.com',
-    defaultProvider: 'https://http-mainnet.huobichain.com',
+    defaultProvider: 'https://http-mainnet.hecochain.com',
     MasterChef: '0x0bF517Ccfb8dDA85CB278595C6799b8652B85B13',
     GetApy: '0xE453Fd8FF38b46fBda57f236103f6336CBf50594',
     GetVaultApy: '0xaE3a4402B987Ad29D5e7F17Bbb4fD22a713f7DaE',
