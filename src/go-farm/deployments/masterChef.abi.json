@@ -332,7 +332,7 @@
 				"type": "address"
 			}
 		],
-		"name": "pendingGFT",
+		"name": "pendingToken",
 		"outputs": [
 			{
 				"internalType": "uint256",
