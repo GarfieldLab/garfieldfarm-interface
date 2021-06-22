@@ -6,6 +6,8 @@ import CardContent from '../../../components/CardContent';
 import CardIcon from '../../../components/CardIcon';
 import Label from '../../../components/Label';
 import Value from '../../../components/Value';
+import useEarnings from '../../../hooks/useEarnings';
+import { getDisplayBalance } from '../../../utils/formatBalance';
 
 import TokenSymbol from '../../../components/TokenSymbol';
 import { Farm } from '../../../go-farm';
@@ -15,6 +17,8 @@ interface HarvestProps {
 }
 
 const Harvest: React.FC<HarvestProps> = ({ farm }) => {
+  const earnings = useEarnings(farm.pid);
+
   return (
     <Card>
       <CardContent>
@@ -23,7 +27,8 @@ const Harvest: React.FC<HarvestProps> = ({ farm }) => {
             <CardIcon>
               <TokenSymbol symbol={farm.earnToken.symbol} />
             </CardIcon>
-            <Value value={'0'} />
+            <Value value={getDisplayBalance(earnings)} />
+
             <Label text={`赚到的${farm.earnTokenName}`} />
           </StyledCardHeader>
           {/* <StyledCardActions>
@@ -40,16 +45,6 @@ const StyledCardHeader = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const StyledCardContentInner = styled.div`
-  align-items: center;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export default Harvest;
 
 const StyledCardContentInner = styled.div`
   align-items: center;
