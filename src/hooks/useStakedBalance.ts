@@ -19,12 +19,8 @@ const useStakedBalance = (pid: number) => {
 
       const refreshBalance = setInterval(fetchBalance, config.refreshInterval);
       return () => clearInterval(refreshBalance);
-    } else {
-      setTimeout(() => {
-        fetchBalance().catch((err) => console.error(err.stack));
-      }, 1000);
     }
-  }, [pid, setBalance, goFarm, fetchBalance]);
+  }, [pid, setBalance, goFarm?.isUnlocked, fetchBalance]);
 
   return balance;
 };

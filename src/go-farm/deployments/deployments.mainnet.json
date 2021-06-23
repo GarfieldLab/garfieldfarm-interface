@@ -326,7 +326,7 @@
             "type": "address"
           }
         ],
-        "name": "pendingToken",
+        "name": "pendingTOKEN",
         "outputs": [
           {
             "internalType": "uint256",

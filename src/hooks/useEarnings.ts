@@ -6,7 +6,6 @@ import config from '../config';
 const useEarnings = (pid: number) => {
   const [balance, setBalance] = useState(BigNumber.from(0));
   const goFarm = useGoFarm();
-
   const fetchBalance = useCallback(async () => {
     const balance = await goFarm.earnedFromFarm(pid, goFarm.myAccount);
     setBalance(balance);
@@ -19,7 +18,7 @@ const useEarnings = (pid: number) => {
       const refreshBalance = setInterval(fetchBalance, config.refreshInterval);
       return () => clearInterval(refreshBalance);
     }
-  }, [pid, goFarm,fetchBalance]);
+  }, [pid, goFarm?.isUnlocked,fetchBalance]);
 
   return balance;
 };
