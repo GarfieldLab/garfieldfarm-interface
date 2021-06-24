@@ -9,14 +9,14 @@ const useTokenBalance = (token: ERC20) => {
   const goFarm = useGoFarm();
 
   const fetchBalance = useCallback(async () => {
-    if(goFarm){
-      if(token.symbol === 'HT'){
-        setBalance(goFarm.balance)
-      }else{
+    if (goFarm) {
+      if (token.symbol === 'HT') {
+        setBalance(goFarm.balance);
+      } else {
         setBalance(await token.balanceOf(goFarm.myAccount));
       }
     }
-  }, [token,goFarm]);
+  }, [token, goFarm]);
 
   useEffect(() => {
     if (goFarm?.isUnlocked) {
@@ -26,7 +26,7 @@ const useTokenBalance = (token: ERC20) => {
       let refreshInterval = setInterval(fetchBalance, config.refreshInterval);
       return () => clearInterval(refreshInterval);
     }
-  }, [goFarm, token,fetchBalance]);
+  }, [goFarm.isUnlocked, token, fetchBalance]);
 
   return balance;
 };
