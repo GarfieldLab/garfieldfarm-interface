@@ -91,14 +91,14 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               </CardIcon>
             </LogoCard>
             <StyledTitle>{farm.name}</StyledTitle>
-            <StyledDetails>
-              <StyledDetail>存入 {farm.depositTokenName.toUpperCase()}</StyledDetail>
+            <StyledDetail>
+              <StyledDetail>存款额 ${getDisplayBalance(farm.poolPrice, 18, 0)}</StyledDetail>
+              <StyledDetail>Apy {getDisplayBalance(farm.apy, 18, 2)}%</StyledDetail>
+            </StyledDetail>
+            <StyledDetail>
               <StyledDetail>赚取 {`${farm.earnTokenName}`}</StyledDetail>
-              <div><br/></div>
-              <StyledDetail>Apy 0%</StyledDetail>
-              <StyledDetail>存款额 ${getDisplayBalance(farm.poolPrice,18,0)}</StyledDetail>
-              <StyledDetail>日产量 0 GFT</StyledDetail>
-            </StyledDetails>
+              <StyledDetail>日产量 {getDisplayBalance(farm.alloc, 18, 0)} GFT</StyledDetail>
+            </StyledDetail>
             <Button text="加入" to={`/farm/${farm.depositTokenName}`} />
           </StyledContent>
         </CardContent>

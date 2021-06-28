@@ -51,8 +51,8 @@ export interface Vault extends VaultInfo {
   address: string;
   depositToken: ERC20;
   earnToken: ERC20;
-  // apy: BigNumber;
-  // balance: BigNumber;
+  apy: BigNumber;
+  balance: BigNumber;
 }
 
 

@@ -11,6 +11,7 @@ import GVaultABI from './deployments/gVault.abi.json';
 import GVaultHTABI from './deployments/gVaultHT.abi.json';
 import GetApyAbi from './deployments/GetApy.abi.json';
 import GetVaultApyAbi from './deployments/GetVaultApy.abi.json';
+import GetGFTApyAbi from './deployments/GetGFTApy.abi.json';
 
 /**
  * An API module of GoFarm Cash contracts.
@@ -38,6 +39,7 @@ export class GoFarm {
     this.contracts['MasterChef'] = new Contract(cfg.MasterChef, MasterChefABI, provider);
     this.contracts['GetApy'] = new Contract(cfg.GetApy, GetApyAbi, provider);
     this.contracts['GetVaultApy'] = new Contract(cfg.GetVaultApy, GetVaultApyAbi, provider);
+    this.contracts['GetGFTApy'] = new Contract(cfg.GetGFTApy, GetGFTApyAbi, provider);
     this.externalTokens = {};
     this.pair = {};
     for (const [symbol, [address, decimal]] of Object.entries(externalTokens)) {
@@ -341,5 +343,13 @@ export class GoFarm {
       }
     }
     return await getVaultApy.getTVLPrice(_vaults);
+  }
+  async getGFTApy(): Promise<string> {
+    const getGFTApyContract = this.contracts['GetGFTApy'];
+    return await getGFTApyContract.getApysOfDay();
+  }
+  async getGFTTVLPrice(): Promise<string> {
+    const getGFTApyContract = this.contracts['GetGFTApy'];
+    return await getGFTApyContract.getTVLPrice();
   }
 }

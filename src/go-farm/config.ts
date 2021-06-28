@@ -11,6 +11,7 @@ export type Configuration = {
   MasterChef: string,
   GetApy: string,
   GetVaultApy: string,
+  GetGFTApy: string,
   config?: EthereumConfig,
   refreshInterval: number;
   gasLimitMultiplier: number;
