@@ -311,7 +311,6 @@ export class GoFarm {
     const getVaultApy = this.contracts['GetVaultApy'];
     const { vaults } = this.config;
     const _vaults = [];
-    console.log(123, Object.entries(vaults));
 
     for (const [, address] of Object.entries(vaults)) {
       if (address !== this.externalTokens['sGFT'].address) {
