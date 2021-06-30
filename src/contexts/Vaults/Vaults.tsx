@@ -15,6 +15,8 @@ const Vaults: React.FC = ({ children }) => {
     // const balance = await goFarm.getVaultTVLs();
     // console.log('price',price)
 
+    const GFTapy = await goFarm.getGFTApy();
+    const GFTprice = await goFarm.getGFTTVLPrice();
     const price = await goFarm.getVaultTVLPrice();
     const apys = await goFarm.getVaultApys();
     for (const vaultInfo of Object.values(vaultDefinitions)) {
@@ -26,8 +28,8 @@ const Vaults: React.FC = ({ children }) => {
         address: config.MasterChef,
         depositToken: goFarm.externalTokens[vaultInfo.depositTokenName],
         earnToken: goFarm.externalTokens[vaultInfo.depositTokenName],
-        apy: vaultInfo.id < 5 ? BigNumber.from(apys[vaultInfo.id]) : BigNumber.from(0),
-        balance: vaultInfo.id < 5 ? BigNumber.from(price[vaultInfo.id]) : BigNumber.from(0),
+        apy: vaultInfo.id < 5 ? BigNumber.from(apys[vaultInfo.id]) : BigNumber.from(GFTapy).mul(100).mul(365),
+        balance: vaultInfo.id < 5 ? BigNumber.from(price[vaultInfo.id]) : BigNumber.from(GFTprice),
         // apy:BigNumber.from(0),
         // balance: BigNumber.from(0),
       });
